@@ -18,8 +18,10 @@ Table Of Contents:
 
 ---
 
-<div id="debugging">
-### Debugging
+
+<div id="debugging"/>
+
+## Debugging 
 
 Table of Contents
 1. [Intro to the Debugging Challanges](#1)
@@ -34,7 +36,8 @@ Table of Contents
 10. [Prevent Infinite Loops with a Valid Terminal Condition](#10)
 
 <div id="1"/>
-### Intro to the Debugging Challanges
+
+### Intro to the Debugging Challenges
 
 Debugging is the process of finding exactly what isn't working and fixing it.
 These issues generally come in three forms:
@@ -86,6 +89,7 @@ Fortunatley, debugging is a learnable skill that just requires a little patience
 
 
 <div id="2"/>
+
 ### Use typeof to Check the Type of a Variable
 
 You can use typeof to check the data structure, or type, of a variable. This is userful in debugging when working with multiple data types. If you can think you're adding two numbers, but one is actually a string, the results can be unexpected. Type errors can lurk in calculations or function calls. Be careful when you're accessing and working with external data in the form of a JavaScript Object Notation(JSON) object.
@@ -123,6 +127,7 @@ console.log(typeof three); // String
 ```
 
 <div id="3"/>
+
 ### Catching Misspelled Variable and Function Names
 
 The console.log() and typeof methods are the two primary ways to check intermediate values and types of program output. Now it's time to get into the common forms that bugs take. One syntax-level issue that fast typers can commiserate with is the humble spelling error.
@@ -139,6 +144,7 @@ console.log(`Net working capital is: ${netWorkingCapital}`);
 ```
 
 <div id="4"/>
+
 ### Catch Unclosed Parentheses, Brackets, Braces and Quotes
 
 Another syntax error to be aware of is that all opening parentheses, brackets, curly braces, and quotes have a closing pair. Forgetting a peice tends to happen when you're editing existing code and inserting items with one of the pair types. Also, take care when nesting code blocks into others, such as adding a callback function as an argument to a method.
@@ -147,6 +153,7 @@ One way to avoid this mistake is as soon as the opening character is typed, imme
 
 
 <div id="5"/>
+
 ### Catch Mixed Usage of Single and Double Quotes
 
 JavaScript allows the use of both single('') and double("") quotes to declare a string. Deciding which one to use generally comes down to personal prefernce, with some exceptions.
@@ -170,6 +177,7 @@ const allSameQuotes = 'I\'ve had a perfectly wonderful evening, but this wasn\'t
 ```
 
 <div id="6"/>
+
 ### Catch Use of Assignment Operator Instead of Equality Operator
 
 Branching programs, i.e. ones that do different things if certain conditions are met, rely on if, else if, and else statements in JavaScript. The condition sometimes takes the form of testing whether a result is equal to a value.
@@ -208,6 +216,7 @@ console.log(result);
 ```
 
 <div id="7"/>
+
 ### Catch Missing Open and Closing Parenthesis After a Function Call
 
 When a function or method doesn't take any arguments, you may forget to include the (empty) opening and closing parenthesis when calling it. Often times the result of a function call is saved in a variable for other use in your code. This error can be detected by logging variable values (or their types) to the console and seeing that one is set to a function reference, instead of the expected value the function returns. 
@@ -222,6 +231,7 @@ let varTwo = myFunction(); // set to equal the string "You Rock!"
 ```
 
 <div id="8"/>
+
 ### Catch Off By One Errors When Using Indexing
 
 **Off by one error** (sometimes called OBOE) crop up when you're tryng to target a specific index of a string or array (to slice or access a segment), or when looping over the indices of them. JavaScript indexing starts at zero, not one, ehich means the last index is always one less than the length of the item. If you try to access an index equal to the length, the program may throw an "index out of range" reference error or print undefined.
@@ -246,6 +256,7 @@ for (let k = 0; k < len; k++) {
 ```
 
 <div id="9"/>
+
 ### Use Caution When Reinitializing Variables Inside a Loop
 
 Sometimes it's necessary to save information, increment counters, or re-set variables within a loop. A potential issue is when variables either should be reinitialized, and aren't, or vice versa. This is particularly dangerous if you accidentally reset the variable being used for the terminal condition, causing an infinite loop.
@@ -320,6 +331,7 @@ newarray  [ [ 0, 0 ], [ 0, 0 ], [ 0, 0 ] ]
 ```
 
 <div id="10"/>
+
 ### Prevent Infinite Loops with a Valid Terminal Condition
 
 The final topic is the dreaded infinite loop. Loops are great tools when you need your program to run a code block a certain number of times or until a condition is met, but they need a terminal condition that ends the looping. Infinite loops are likely to freeze or crash the browser, and cause general program execution mayhem, which no one wants.
@@ -348,9 +360,10 @@ function myFunc() {
 ---
 
 <div id="basic-data-structures">
+
 # Basic Data Structures
 
-# Table of contents
+Table of contents
 1. [Introduction](#id-section1)
 2. [Use an Array to Store a Collection of Data](#id-section2)
 3. [Access an Array's Contents Using Bracket Notation](#id-section3)
@@ -377,11 +390,13 @@ function myFunc() {
 
 
 <div id="id-section1"/>
+
 ## Introduction
 
 Data can be stored and accessed in many different ways, both in JavaScript and other languages. This section will teach you how to manipulate arrays, as well as access and copy the information within them. It will also teach you how to manipulate and access the data within JavaScript objects, using both dot and bracket notation. When you are done with this section, you should understand the basic properties and differences between arrays and objects, as well as how to choose which to use for a given purpose.
 
 <div id="id-section2"/>
+
 ### Use an Array to Store a Collection of Data
 
 The below is an example of the simplest implementation of an array data structure. This is known as a _one-dimensional array_, meaning it only has one level, or that it does not have any other arrays nested within it. Notice it contains _booleans, strings and numbers_, amoung other valid JavaScript data types:
@@ -421,6 +436,7 @@ let complexArray = [
 ```
 
 <div id="id-section3"/>
+
 ### Access an Array's Contents Using Bracket Notation
 
 The fundamental feature of any data structure is, of course, the ability to not only store data, but to be able to retrieve that data on command. So, now that we've learned how to create an array, let's begin to think about how we can access that array's information. 
@@ -450,6 +466,7 @@ ourArray[1] = "not b anymore";
 Using bracket notation, we have reset the item at index 1 from "b", to "not b anymore".
 
 <div id="id-section4"/>
+
 ### Add Items to an Array with push() and unshift()
 
 An array's length, like the data types it can contain, is not fixed. Arrays can be defned with a length of any number of elements, and elements can be added or removed over time;in other words, arrays are _mutable_. In this challenge, we will look at two methods with which we can programmatically modify an array: Array.push() and Array.unshift().
@@ -470,6 +487,7 @@ romanNumerals.push(twentyThree);
 Notice that we can also pass variables, which allows us even greater flexibilty in dynamically modifying our array's data.
 
 <div id="id-section5"/>
+
 ### Remove Items from an Array with pop() and shift()
 
 Both push() and unshift() have corresponding methods that are nearly functional opposites: pop() and shift(). As you may have guessed by now, instead of adding, pop() _removes_ an element from the end of an array, while shift() removes an element from the beginning. The key difference between pop() and shift() and their cousins push() and unshift(), is that neither method takes parameters, and each only allows an array to be modified by a single element at a time.
@@ -494,6 +512,7 @@ let popped = greetings.pop();
 ```
 
 <div id="id-section6"/>
+
 ### Remove Items Using splice()
 
 Ok, so we've learned how to remove elements from the beginning and end of arrays using shift() and pop(), but what if we want to remove an element from somewhere in the middle? Or remove more than one element at once? Well, that's where splice() comes in. splice() allows us to do just that: **remove any number of consecutive elements** from anywhere in an array.
@@ -530,6 +549,7 @@ console.log(sumOfTen([2, 5, 1, 5, 2, 1]));
 ```
 
 <div id="id-section7"/>
+
 ### Add Items Using splice()
 
 With splice() - in addition to removing elements, we can use the third parameter, which represents one of more elements, to _add_ them as well. This can be useful for quickly switching out an element, or a set of elements, for another. For instance, lets say you're storing a color scheme for a set of DOM elements in an array, and want to dynamically change a color based on some action:
@@ -550,6 +570,7 @@ colorScheme = colorChange(colorScheme, 2, '#332327');
 This function takes an array of hex values, an index at which to remove an element, and the new color to replace the removed element with. The return value is an array containing a newly modified color scheme!
 
 <div id="id-section8"/>
+
 ### Copy Array Items Using slice()
 
 slice(), rather than modifying an array, copies, or _extracts_, a given number of elements to a new array, leaving the array it is called upon untouched. 
@@ -580,6 +601,7 @@ console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']
 ```
 
 <div id="id-section9"/>
+
 ### Copy an Array with the Spread Operator
 
 While slice() allows us to be selective about what elements of an array to copy, amoung several other useful tasks, ES6's _new spread operator_ allows us to easily copy _all_ of an array's elements, in order, with a simple and highly readable syntax. The spread syntax looks like this: ...
@@ -611,6 +633,7 @@ console.log(copyMachine([true, false, true], 4));
 ```
 
 <div id="id-section10"/>
+
 ### Combine Arrays with the Spread Operator
 
 Another huge advantage of the _spread_ operator, is the ability to combine arrays, or to insert all the elements of one array into another, at any index. With more traditional syntaxes, we can concatenate arrays, but this only allows us to combine arrays at the end of one, and at the start of another. Spread syntax makes the following operation extremely simple:
@@ -638,6 +661,7 @@ console.log(spreadOut());
 ```
 
 <div id="id-section11"/>
+
 ### Check For The Presence of an Element With indexOf()
 
 Since arrays can be changed, or _mutated_ at any time, there's no guarantee about where a particular piece of data will be on a given array, or if that element even still exists. Luckily, JavaScript provides us with another built-in method, indexOf(), that allows us to quickly and easily check for the presence of an element as a parameter, and when called, it returns the position, or index, of tht element, or -1 if the element does not exist on the array.
@@ -671,6 +695,7 @@ console.log(quickCheck([true, false, false], undefined));
 ```
 
 <div id="id-section12"/>
+
 ### Iterate Through All an Array's Items Using For Loops
 
 Sometimes when working with arrays, it is very handy to be able to iterate throught each item to find one or more elements that we might need, or to manipulate an array based on which data items meet a certain set of criteria. JavaScript offers several built in methods that each iterate over arrays in slightly different ways to achieve different results (such as **every(), forEach(), map(), etc**), however the technique which is most flexible and offers us the greatest amount of control is a simple for loop.
@@ -715,6 +740,7 @@ console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
 ```
 
 <div id="id-section13"/>
+
 ### Create complex multi-dimensional arrays
 
 Awesome! You have just learnt a ton about arrays! This has been a fairly high level overview, and there is plenty more to learn about working with arrays, much of which you will see in later sections. But before moving on to looking at _Objects_ lets take one more look, and see how arrays can become a bit more complex than what we have seen in previous challenges.
@@ -773,6 +799,7 @@ console.log(myNestedArray);
 ```
 
 <div id="id-section14"/>
+
 ### Add Key-Value Pairs to JavaScript Objects
 
 At their basic, objects are just collections of _key-value pairs_, or in other words, pieces of data mapped to unique identifies that we cal _properties_ or _keys_. Let's take a look at a very simple example.
@@ -837,6 +864,7 @@ OBJECT[{KEY}] = {VALUE}
 ```
 
 <div id="id-section15"/>
+
 ### Modify an Object Nested Within an Object
 
 Now let's take a look at a slightly more complex object. Object properties can be nested to an arbitrary depth, and their values can be any type of data supported by JavaScript, including arrays and even other objects. Consider the following:
@@ -855,7 +883,7 @@ let nestedObject = {
   }
 };
 ```
-nestedObjects has three unique keys: id, whise value is a number, date whose value is a string, and data, whose value is an object which has yet another object nested within it. While structures can quickly become complex, we can still use the saqme notations to access the information we need.
+nestedObjects has three unique keys: id, whise value is a number, date whose value is a string, and data, whose value is an object which has yet another object nested within it. While structures can quickly become complex, we can still use the same notations to access the information we need.
 
 Here we've defined an object, userActivity, which includes another object nested within it. You can modify properties on this nested object in the same way you modified properties in the last challenge. Set the value of the online key to 45
 
@@ -895,6 +923,7 @@ myObject.first_level_object.level_2 = 'level-2 has been reached';
 ```
 
 <div id="id-section16"/>
+
 ### Access Property Names with Bracket Notation
 
 You can use bracket notation as a way to access property values using the evaluation of a variable. For instance, imagine that our foods object is being used in a program for a supermarket cash register. We have some function that sets the selectedFood and we want to check our foods object for the presence of that food. This might look like:
@@ -944,6 +973,7 @@ function checkInventory(scannedItem) {
 ```
 
 <div id="id-section17"/>
+
 ### Use the delete Keyword to Remove Object Properties
 
 Now you know what objects are and their basic features and advantages. In short, they are key-value stores which provide a flexible, intuitive way to structure data, **and**, they provide very fast lookup time. 
@@ -956,6 +986,7 @@ delete foods.apples;
 ```
 
 <div id="id-section18"/>
+
 ### Check if an Object has a Property
 
 Now we can add, modify, and remove keys from objects. But what if we just wanted to know if an object has a specific property? JavaScript provides us with two different ways to do this. One uses the hasOwnProperty() method and the other uses the **in** keyword. If we have an object users with a property of Alan, we could check for its presence in either of the following way: 
@@ -1041,6 +1072,7 @@ function isEveryoneHere(obj) {
 ```
 
 <div id="id-section19"/>
+
 ### Iterate Through the Keys of an Object with a for...in Statement
 
 Sometimes you may need to iterate through all the keys within an object. This requires a specific syntax in JavaScript called a for...in statement. For our users object, this could look like:
@@ -1100,6 +1132,7 @@ console.log(countOnline(users));
 ```
 
 <div id="id-section20"/>
+
 ### Generate an Array of All Object Keys with Object.keys()
 
 We can also generate an array which contains all the keys stored in an object using the Object.keys()
@@ -1137,6 +1170,7 @@ console.log(getArrayOfUsers(users));
 ```
 
 <div id="id-section21"/>
+
 ### Modify an Array Stored in an Object
 
 Now you've seen all the basic operations for JavaScript objects. You can add, modify, and remove key-value pairs, check if keys exist, and iterate over all the keys in an object. As you continue learning JavaScript you will see even more versatile applications of objects. Additionally, the optional Advanced Data Structures lessons later in the curriculum also cover the ES6 _Map_ and _Set_ objects, you're fully prepared to begin tackling more complex problems using JavaScript!
@@ -1181,9 +1215,10 @@ Method:
 ---
 
 <div id="oop">
+
 # Object Oriented Programming Challenges
 
-## Table of Contents
+Table of Contents
 1. [Introduction](#id-1)
 2. [Create a Basic JavaScript Object](#id-2)
 3. [Use Dot Notation to Access the Properties of an Object](#id-3)
@@ -1214,6 +1249,7 @@ Method:
 
 
 <div id="id-1"/>
+
 ### Introduction
 
 As its name implies, object oriented programming organizes code into object definitions. These are sometimes called classes, and they group together data with related behaviour. The data is an object's attibutes, and the behaviour (or functions) are methods.
@@ -1223,6 +1259,7 @@ The object structure makes it flexible within a program. Objects can transfer in
 Your choice of programming approach depends on a few factors. These include the type of problem, as well as how you want to structure your data and algorithms. This section covers object oriented programming principles in JavaScript.
 
 <div id="id-2"/>
+
 ### Create a Basic JavaScript Object
 
 Think about things people see everyday, like cars, shops, and birds. These are all objects: tangible things people can observe and interact with.
@@ -1242,6 +1279,7 @@ let duck = {
 This duck object has two property/value pairs: a name of "Aflac" and a numLegs of 2.
 
 <div id="id-3"/>
+
 ### Use Dot Notation to Access the Properties of an Object
 
 How to access the values of those properties.
@@ -1257,6 +1295,7 @@ console.log(duck.name);
 Dot notation is used on the object name, duck, followed by the name of the property, name, to access the value of "Aflac"
 
 <div id="id-4"/>
+
 ### Create a Method on an Object
 
 Objects can have a special type of property, called a method.
@@ -1277,6 +1316,7 @@ This example adds the sayName method, which is a function that returns a sentenc
 Notice that the method accessed the name property in the return statement using duck.name. The next challenge will cover another way to do this.
 
 <div id="id-5"/>
+
 ### Make Code More Reusable with the this Keyword
 
 While the above example is a valid way to access the object's property, there is a pitfall here. If the variable name changes, any code referncing the original name would need to be updated as well. In a short object definition, it isn't a problem, but if an object has many references to its properties there is a greater chance for error.
@@ -1295,6 +1335,7 @@ this is a deep topic, and the above example is only one way to use it. In the cu
 If the object's name is changed to mallard, it is not necessary to find all the references to duck in the code. It makes the code reusable and easier to read.
 
 <div id="id-6"/>
+
 ### Define a Constructor Function
 
 Constructors are functions that create new objects. They define properties and behaviors that will belong to the new object. Think of them as a blueprint for the creation of new objects.
@@ -1316,6 +1357,7 @@ Constructors follow a few conventions:
     * Constructors define properties and behaviors instead of returning a value as other functions might.
 
 <div id="id-7"/>
+
 ### Use a Constructor to Create Objects
 
 Here's the Bird constructor from the above challenge:
@@ -1346,6 +1388,7 @@ blueBird.name; // => Elvira
 ```
 
 <div id="id-8"/>
+
 ### Extend Constructors to Receive Arguments
 
 The Bird and Dog constructors from above worked well. However, notice that all Birds that are created with the Bird constructor are named Albert, are blue in color, and have two legs. What if you want birds with different values for name and color? It's possible to change the properties of each bird manually but that would be a lot of work:
@@ -1381,6 +1424,7 @@ cardinal.numLegs // 2
 The constructor is more flexible. It's now possible to define the properties for each Bird at the time it is created, which is one way that JavaScript constructors are so useful. They group objects together based on shared characteristics and behavior and define a blueprint that automates their creation.
 
 <div id="id-9"/>
+
 ### Verify an Object's Constructor with instanceof
 
 Anytime a constructor function createsw a new object, that object is said to be an instance of its constructor. JavaScript gives a convienient way to verify this with the instanceof operator. instanceof allows you to compare an object to a constructor, returning true or false based on whether or not that object was created with the constructor. Here's an example:
@@ -1409,6 +1453,7 @@ canary instanceof Bird; // => false
 ```
 
 <div id="id-10"/>
+
 ### Understand Own Properties
 
 In the following example, the Bird constructor defines two properties: name and numLegs:
@@ -1459,6 +1504,7 @@ for (let property in canary) {
 ```
 
 <div id="id-11"/>
+
 ### Use Prototype Properties to Reduce Duplicate Code
 
 Since numlegs will probably have the same value for all instances of Bird, you essentially have a duplicate variable numLegs inside each Bird instance.
@@ -1481,6 +1527,7 @@ Since all instances automatically have the properties on the prototype, think of
 Note that the prototype for duck and canary is part of the Bird constructor as Bird.prototype. Nearly ecery object in JavaScript has a prototype property which is part of the constructor function that created it.
 
 <div id="id-12"/>
+
 ### Iterate Over All Properties
 
 You have now seen two types of properties:
@@ -1540,6 +1587,7 @@ for (let property in beagle) {
 ```
 
 <div id="id-13"/>
+
 ### Understand the Constructor Property
 
 There is a special constructor property located on the object instances duck and beagle that were created in the previous challenges:
@@ -1586,6 +1634,7 @@ function joinDogFraternity(candidate) {
 ```
 
 <div id="id-14"/>
+
 ### Change the Prototype to a New Object
 
 Up until now we have been adding properties to the prototype individually:
@@ -1635,6 +1684,7 @@ Dog.prototype = {
 ```
 
 <div id="id-15"/>
+
 ### Remember to Set the Constructor Property when Changing the Prototype
 
 There is one crucial side effect of manually setting the prototype to a new object. It erased the constructor property! The code in the previous challenge would print the following for duck:
@@ -1679,6 +1729,7 @@ Dog.prototype = {
 ```
 
 <div id="id-16"/>
+
 ### Understand Where an Object’s Prototype Comes From
 
 Just like people inherit genes from their parents, an object inherits its prototype directly from the constructor function that created it. For example, here the Bird constructor creates the duck object:
@@ -1711,6 +1762,7 @@ Dog.prototype.isPrototypeOf(beagle);
 ```
 
 <div id="id-17"/>
+
 ### Understand the Prototype Chain
 
 All objects in JavaScript (with a few exceptions) have a prototype. Also, an object's prototype itself is an object.
@@ -1756,6 +1808,7 @@ Object.prototype.isPrototypeOf(Dog.prototype);
 ```
 
 <div id="id-18"/>
+
 ### Use Inheritance So You Don't Repeat Yourself
 
 There's a principle in programming called Don't Repeat Yourself (DRY). The reason repeated code is a problem is because any chance requires fixing code in multiple places. This usually means more work for programmers and more room for errors.
@@ -1834,6 +1887,7 @@ Animal.prototype = {
 ```
 
 <div id="id-19"/>
+
 ### Inherit Behaviors from a Supertype
 
 In previous challenge, you created a supertype called Animal that defined behaviors shared by all animals:
@@ -1887,6 +1941,7 @@ beagle.eat(); // Should print "nom nom nom"
 ```
 
 <div id="id-20"/>
+
 ### Set the Child's Prototype to an Instance of the Parent
 
 Above we saw the first step for inheriting behavior from the supertype (or parent) Animal:making a new instance of Animal
@@ -1928,6 +1983,7 @@ beagle.eat();  // Should print "nom nom nom"
 ```
 
 <div id="id-21"/>
+
 ### Reset an Inherited Constructor Property
 
 When an object inherits its prototype from another object, it also inherits the supertype's constructor property. 
@@ -1965,6 +2021,7 @@ let beagle = new Dog();
 ```
 
 <div id="id-22"/>
+
 ### Add Methods After Inheritance
 
 A constructor function that inherits its prototype object from a supertype constructor function can still have its own methods in addition to inherited methods.
@@ -2020,6 +2077,7 @@ beagle.bark(); // Should print "Woof!"
 ```
 
 <div id="id-23"/>
+
 ### Override Inherited Methods
 
 In previous lessons, you learned that an object can inherit its behavior(methods) from another object bu cloning its prototype object:
@@ -2086,6 +2144,7 @@ console.log(penguin.fly());
 ```
 
 <div id="id-24"/>
+
 ### Use a Mixin to Add Common Behavior Between Unrelated Objects
 
 As you have seen, behavior is shared through inheritance. However, there is cases when inheritance is not the best solution. Inheritance does not work well for unrelated objects like Bird and Airplane. They can both fly, but a Bird is not a type of Airplane and vice versa.
@@ -2151,6 +2210,7 @@ glideMixin(boat);
 ```
 
 <div id="id-25"/>
+
 ### Use Closure to Protect Properties Within an Object from Being Modified Externally
 
 In the previous challenge, bird had a public property name. It is considered public because it can be accessed an dchanged outside of bird's definition.
@@ -2190,6 +2250,7 @@ function Bird() {
 ```
 
 <div id="id-26"/>
+
 ### Understand the Immediately Invoked Function Expression (IIFE)
 
 A common pattern inJavaScript is to execute a function as soon as it is declared:
@@ -2218,6 +2279,7 @@ makeNest();
 ```
 
 <div id="id-27"/>
+
 ### Use an IIFE to Create a Module
 
 An immediately invoked function expression (IIFE) is often used togroup related functionality into a single object or module. For example, an earlier challenge defined two mixins:
@@ -2297,6 +2359,7 @@ let funModule = (function () {
 ---
 
 <div id="function-programmin"/>
+
 # Functional Programming
 
 Table of Contents
@@ -2327,6 +2390,7 @@ Table of Contents
 25. [Appedix Notes](#25a)
 
 <div id="1a"/>
+
 ### Introduction to the Functional Programming Challenges
 
 Functional programming is an approach to software development based around the evaluation of functions. Like mathematics, functions in programming map input to output to produce a result. You can combine basic functions in many ways to build more and more complex programs.
@@ -2340,6 +2404,7 @@ Functional prigramming follows a few core principles:
 The functional programming software development approach breaks a program into small, testable parts. This section covers basic functional programming principles in JavaScript.
 
 <div id="2a"/>
+
 ### Learn About Functional Programming
 
 Functional programming is a style of programming where solutions are simple, isolated functions, without any side effects outside of the function scope.
@@ -2390,6 +2455,7 @@ console.log(tea4TeamFCC);
 ```
 
 <div id="3a"/>
+
 ### Understand Functional Programming Terminology
 
 The team wants two types of tea: green tea and black tea. 
@@ -2456,6 +2522,7 @@ console.log(
 ```
 
 <div id="4a"/>
+
 ### Understand the Hazards of Using Imperative Code
 
 Functional programming is a good habit. It keeps your code easy to manage, and saves you from sneaky bugs. But before we get there, let's look at an imperative approach to programming to highlight where you may have issues.
@@ -2521,6 +2588,7 @@ console.log(finalTabs.tabs);
 ```
 
 <div id="5a"/>
+
 ### Avoid Mutations and Side Effects Using Functional Programming
 
 If you haven't already figured it out, the issue in the previous challenge was with the splice call in the tabClose() function. Unfortunately, splice changes the original array it is called on, so the second call to it used a modified array, and gave unexpected results.
@@ -2553,6 +2621,7 @@ console.log(fixedValue); // Should print 4
 ```
 
 <div id="6a"/>
+
 ### Pass Arguments to Avoid External Dependence in a Function
 
 The last challenge was a step closer to functional programming principles, but there is still something missing.
@@ -2587,6 +2656,7 @@ console.log(fixedValue); // Should print 4
 ```
 
 <div id="7a"/>
+
 ### Refactor Global Variables Out of Functions
 
 So, far we have seen two distinct principles for functional programming.
@@ -2630,6 +2700,7 @@ console.log(bookList);
 ```
 
 <div id="8a"/>
+
 ### Use the map Method to extract Data from an Array
 
 So far we have learned to use pure functions to avoid side effects in a program. Also, we have seen the value in having a function only depend on its inpur arguments.
@@ -2776,6 +2847,7 @@ console.log(ratings);
 ```
 
 <div id="9a"/>
+
 ### Implement map on a Prototype
 
 As you have seen from applying Array.prototype.map(), or simply map() earlier, the map method returns an array of the same length as the one it was called on. It also doesn't alter the original array, as long as its callback function doesn't. 
@@ -2810,6 +2882,7 @@ var new_s = s.myMap(function(item){
 ```
 
 <div id="10a"/>
+
 ### Use the filter Method to Extract Data from an Array
 
 Another useful array function is Array.prototype.filter(), or simply filter(). The filter method returns a new array which is at most as long as the original array, but usually has fewer items.
@@ -2820,6 +2893,7 @@ The variable watchList holds an array of objects with information on several mov
 
 
 <div id="11a"/>
+
 ### Implement the filter Method on a Prototype
 
 It would teach us a lot about the filter methid if we try to implement a version of it that behaves exactly like Array.prototype.filter(). It can use either a for loop or Array.prototype.forEach().
@@ -2852,6 +2926,7 @@ var new_s = s.myFilter(function(item){
 ```
 
 <div id="12a"/>
+
 ### Return Part of an Array Using the slice Method
 
 The slice method returns a copy of certain elements of an array. It can take twwo arguments, the first gives the index of where to begin the slice, the second is the index for where to end the slice (and it's non-inclusive). If the arguments are not provided, the default is to start at the beginning of the array through the end, which is an easy way to make a copy of the entire array. The slice method does not mutate the original array, but returns anew one.
@@ -2878,6 +2953,7 @@ sliceArray(inputAnim, 1, 3);
 ```
 
 <div id="13a"/>
+
 ### Remove Elements from an Array Using slice Instead of splice
 
 A common pattern while working with arrays is when you want to remove items and keep the rest of the array. JavaScript offers the splice method for this, which takes arguments for the index of where to start removing items, then the number of items to remove. If the second argument is not provided, the default is to remove otems through the end. However, the splice method mutates the original array it is called on. 
@@ -2907,6 +2983,7 @@ nonMutatingSplice(inputCities);
 ```
 
 <div id="14a"/>
+
 ### Combine Two Arrays Using the concat Method
 
 _Concatenation_ means to join items end to end. JavaScript offers the concat method for both strings and arrays that work in the same way. For arrays, the method is called on one, then another array is provided as the argument to concat, which is added to the end of the first array. It returns a new array and does not mutate either of the original arrays. Here's an example: 
@@ -2931,6 +3008,7 @@ nonMutatingConcat(first, second);
 ```
 
 <div id="15a"/>
+
 ### Add Elements to the End of an Array Using concat Instead of push
 
 Functional programming is all about creating and using non-mutating functions.
@@ -2962,6 +3040,7 @@ nonMutatingPush(first, second);
 ```
 
 <div id="16a"/>
+
 ### Use the reduce Method to Analyze Data 
 
 Array.prototype.reduce(), or simply reduce(), is the most general of all array operations in JavaScript. You can solve almost any array processing problem using the reduce method. 
@@ -2976,6 +3055,7 @@ The variable watchList holds an array of objects with information on several mov
 
 
 <div id="17a"/>
+
 ### Sort an Array Alphabetically using the sort Method
 
 The sort method sorts the elements of an array according to the callback function.
@@ -3016,6 +3096,7 @@ alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 ```
 
 <div id="18a"/>
+
 ### Return a Sorted Array Without Changing the Original Array
 
 A side effect of the sort method is that it changes the order of the elements in the original array. In other words, it mutates the array in place. One way to void this is to first concatenate an empty array to the one being sorted (remember that concat returns a new array), then run the sort method.
@@ -3037,6 +3118,7 @@ nonMutatingSort(globalArray);
 ```
 
 <div id="19a"/>
+
 ### Split a String into an Array Using the split Method
 
 The split method splits a string into an array of strings. It takes an argument for the delimiter, which can be a character to use to break up the string or a regular expression. For example, if the delimiter is a space, you get an array of words, and if the delimeter is an empty string, you get an array of each character in the string.
@@ -3067,6 +3149,7 @@ console.log(splitify("Hello World,I-am code"));
 ```
 
 <div id="20a"/>
+
 ### Combine an Array into a String Using the join Method
 
 The join method is used to jooin the elements of an array together to create a string. It takes an argument for the delimiter that is used to seperate the array elements in the string.
@@ -3092,6 +3175,7 @@ sentensify("May-the-force-be-with-you");
 ```
 
 <div id="21a"/>
+
 ### Apply Functional Programming to Convert Strings to URL Slugs
 
 The alst several challenges covered a number of useful array methods that follow functional programming principles. We've also learned about reduce, which is a powerful method used to reduce problems to simpler forms. From computing averages to sorting, any array operationcan be achieved by applying it. Recall that map and filter are special cases of reduce.
@@ -3134,6 +3218,7 @@ console.log(urlSlug("Hold The Door"));
 ```
 
 <div id="22a"/>
+
 ### Use the every Method to Check that Every Element in an Array Meets a Criteria
 
 The every method works with arrays to check if _every_ element passes a particular test. It returns a Boolean value -true if all values meet the criteria, false if not. 
@@ -3161,6 +3246,7 @@ checkPositive([1, 2, 3, -4, 5]);
 ```
 
 <div id="23a"/>
+
 ### Use the some Method to Check that Any Elements in an Array Meet a Criteria
 
 The some method works with arrays to check if any element passes a particular test. It retruns a Boolean value -true if any of the values meet the criteria, false if not.
@@ -3189,6 +3275,7 @@ checkPositive([1, 2, 3, -4, 5]);
 ```
 
 <div id="24a"/>
+
 ### Introduction to Currying and Partial Application 
 
 The arity of a function is the number or arguments it requires. Currying a function means to convert a function of N arity into N functions of arity 1.
@@ -3252,6 +3339,7 @@ add(10)(20)(30);
 ```
 
 <div id="25a"/>
+
 ## Appedix Notes
 
 **recursion** is when a function calls itself repeatedly to get a job done.
@@ -3279,6 +3367,7 @@ but honestly it's pretty straightforward
 ---
 
 <div id="sass"/>
+
 # SASS
 
 Table Of Contents:
@@ -3295,6 +3384,7 @@ Table Of Contents:
 10. [Sass: Extend One Set of CSS Styles to Another Element](#10b)
 
 <div id="1b"/>
+
 ## Introduction to the Sass Challenges
 
 Sass, or "Syntactically Awesome StyleSheets", is a language extension of CSS. It adds features that aren't available using basic CSS syntax. Sass makes it easier for developers to simplify and maintain the style sheets for their projects.
@@ -3309,6 +3399,7 @@ This section introduces the basic features of Sass.
 
 
 <div id="2b"/>
+
 ## Sass: Store Data with Sass variables
 
 $main-fonts: Arial, sans-serif;
@@ -3324,6 +3415,7 @@ h1 {
 ```
 
 <div id="3b"/>
+
 ## Sass: Nesting CSS with Sass
 
 ```
@@ -3342,6 +3434,7 @@ nav {
 ```
 
 <div id="4b"/>
+
 ## Sass: Create Reusable CSS with Mixins
 
 ```
@@ -3360,6 +3453,7 @@ div {
 ```
 
 <div id="5b"/>
+
 ## Sass: Use @if and @else to Add Logic To Your Styles
 
 ```
@@ -3386,6 +3480,7 @@ div {
 ```
 
 <div id="6b"/>
+
 ## Sass: Use @for to Create a Sass Loop
 
 @for is used in two ways: "start through end" or "start to end". The main difference is that
@@ -3419,6 +3514,7 @@ The #{$i} part is the syntax to combine a variable (i) with the text to make a s
 This is a powerful way to create a grid layout. Now you have twelve options for column widths available as CSS classes.
 
 <div id="7b"/>
+
 ## Sass: Use @each to Map Over Items in a List
 
 The last challenge showed how the @for directive uses a starting and ending value to loop a certain number of times. Sass also offers the @each directive which loops over each item in a list or map
@@ -3460,6 +3556,7 @@ Both of the above code examples are converted into the following CSS:
 ```
 
 <div id="8b"/>
+
 ## Apply a Style Until a Condition is Met with @while
 
 The @while directive is an option with similar functionality to the JavaScript while loop. It creates CSS rules until a condition is met.
@@ -3479,6 +3576,7 @@ First, define a variable $x and set it to 1. Next, use the @while directive to c
 After setting the CSS rule for width, $x is incremented by 1 to avoid an infinite loop.
 
 <div id="9b"/>
+
 ## Sass: Split Your Styles into Smaller Chunks with Partials
 
 Partials in Sass are separate files that hold segments of CSS code. These are imported and used in other Sass files. This is a great way to group similar code into a module to keep it organized.
@@ -3497,6 +3595,7 @@ Note that the underscore is not needed in the import statement - Sass understand
 
 
 <div id="10b"/>
+
 ## Sass: Extend One Set of CSS Styles to Another Element
 
 Sass has a feature called extend that makes it easy to borrow the CSS rules from one element and build upon them in another.
